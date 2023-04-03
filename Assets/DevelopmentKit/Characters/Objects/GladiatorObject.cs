@@ -13,17 +13,26 @@ public class GladiatorObject : Character2DObject
     [NonSerialized] public float armorPoints;    
     [NonSerialized] public float maxHealthPoints;
     [NonSerialized] public float healthPoints;
-    public void WhenEquippingWeapons(Weapon weapon)
+    [NonSerialized] public float cooldownAttack;
+    public Gladiator Create()
     {
-        damagePoints = weapon.damage + ((weapon.damage*0.3f)/attributes.force);
+        SetHealth();
+        SetDamage();
+        SetCooldown();
+        return new Gladiator(this);
     }
-    public void WhenUnequippingWeapons()
+    private void SetHealth()
     {
-        damagePoints = attributes.force;
-    }
-    public void LevelUp()
-    {
-        maxHealthPoints = baseHealthPoints + attributes.constitution + level;
+        maxHealthPoints = baseHealthPoints + ((50*attributes.constitution)/baseHealthPoints)*level;
         healthPoints = maxHealthPoints;
+    }
+    private void SetDamage()
+    {
+        damagePoints = level * (attributes.force/50) + attributes.force;
+    }
+
+    private void SetCooldown()
+    {
+        cooldownAttack = 10 - attributes.dexterity;
     }
 }

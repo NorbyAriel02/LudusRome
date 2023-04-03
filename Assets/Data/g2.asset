@@ -17,10 +17,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   attributes:
     force: 4
-    dexterity: 0
-    constitution: 0
+    dexterity: 7
+    constitution: 4
     intelligence: 0
     wisdom: 0
     charisma: 0
-  baseHealthPoints: 50
-  level: 1
+  baseHealthPoints: 100
+  level: 10

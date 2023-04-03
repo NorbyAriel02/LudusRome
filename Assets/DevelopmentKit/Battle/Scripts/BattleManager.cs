@@ -14,6 +14,6 @@ public class BattleManager
 
     public virtual float FormuleAttack(float attack, float armor)
     {
-        return (attack * 4f - armor * 2f);
+        return (attack * 3f - armor);
     }
 }

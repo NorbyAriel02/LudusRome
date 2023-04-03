@@ -11,9 +11,8 @@ public class ItemObject : ScriptableObject
     public Item data = new Item();
     public List<string> boneNames = new List<string>();    
     public Item CreateItem()
-    {
-        Item newItem = new Item(this);
-        return newItem;
+    {        
+        return new Item(this); 
     }
 
     private void OnValidate()
