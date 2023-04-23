@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     
-    public Attribute[] attributes;
-    public Attribute Agility => attributes[0];
+    public DkitAttribute[] attributes;
+    public DkitAttribute Agility => attributes[0];
     
     private InventoryObject _equipment;
 
@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour
         //}
     }
     
-    public void AttributeModified(Attribute attribute)
+    public void AttributeModified(DkitAttribute attribute)
     {
         //Debug.Log(string.Concat(attribute.type, " was updated! Value is now ", attribute.value.ModifiedValue));
     }

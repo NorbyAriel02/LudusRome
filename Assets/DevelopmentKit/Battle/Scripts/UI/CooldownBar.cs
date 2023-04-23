@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using static BattleController;
 
 public class CooldownBar : MonoBehaviour
 {
@@ -40,7 +39,7 @@ public class CooldownBar : MonoBehaviour
             if (timer < 0)
                 timer = gladiator.data.cooldownAttack;
 
-            UIHelper.SetHealthBar(ref imgCooldownBar, timer, gladiator.data.cooldownAttack);            
+            UIHelper.SetfillAmount(ref imgCooldownBar, timer, gladiator.data.cooldownAttack);            
             yield return null;            
         }
         Debug.Log("End corrutine");

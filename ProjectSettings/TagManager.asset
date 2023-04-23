@@ -38,6 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1463052973
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Main
+    uniqueID: 2947258125
+    locked: 0
+  - name: Characters
+    uniqueID: 3602206135
+    locked: 0
+  - name: Foreground
+    uniqueID: 2171248807
+    locked: 0
+  - name: Refraction
+    uniqueID: 25400419
+    locked: 0
+  - name: UI - Number Display
+    uniqueID: 4019257561
+    locked: 0
+  - name: UI - Unit Display
+    uniqueID: 3441261493
     locked: 0

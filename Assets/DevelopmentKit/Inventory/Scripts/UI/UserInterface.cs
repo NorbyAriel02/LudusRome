@@ -7,7 +7,6 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using System.Linq;
 using System;
-using static UnityEditor.Progress;
 
 [RequireComponent(typeof(EventTrigger))]
 public abstract class UserInterface : MonoBehaviour

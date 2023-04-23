@@ -1,7 +1,7 @@
 [System.Serializable]
 public class Stats 
 {
-    public float force;
+    public float Strength;
     public float dexterity;
     public float constitution;
     public float intelligence;

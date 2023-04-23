@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class StartGladiator : MonoBehaviour
 {
-    public GladiatorObject gladiatorObject;
+    public GladiatorDataBaseObject db;
     public Gladiator gladiator;
+    public Transform view;
     void Awake()
     {
-        gladiator = gladiatorObject.Create();
-    }
-
-    
-    void Update()
-    {
-        
-    }
+        int i = Random.Range(0, db.GladiatorObjects.Length);
+        gladiator = db.GladiatorObjects[i].Create();
+        GameObject character = Instantiate(gladiator.data.Character, view);
+    }    
 }

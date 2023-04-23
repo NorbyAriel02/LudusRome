@@ -11,11 +11,11 @@ public class Gladiator
     }
     public void WhenEquippingWeapons(Weapon weapon)
     {
-        data.damagePoints = weapon.damage + ((weapon.damage * 0.3f) / data.attributes.force);
+        data.damagePoints = weapon.damage + ((weapon.damage * 0.3f) / data.attributes.Strength);
     }
     public void WhenUnequippingWeapons()
     {
-        data.damagePoints = data.attributes.force;
+        data.damagePoints = data.attributes.Strength;
     }
     public void LevelUp()
     {

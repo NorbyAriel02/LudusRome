@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316b13e282c37bb489f622b8435e44a8, type: 3}
+  m_Name: DBGladiators
+  m_EditorClassIdentifier: 
+  GladiatorObjects:
+  - {fileID: 11400000, guid: 95e5404af8c424c4c841ead07b17733f, type: 2}
+  - {fileID: 11400000, guid: f040517da02d39a41867ab5adb1eb49c, type: 2}
+  - {fileID: 11400000, guid: 5f3bb69e12db7b845abfb51a0c0c748c, type: 2}
+  - {fileID: 11400000, guid: 90f284ea82d636746bc5f9d50f442448, type: 2}
+  - {fileID: 11400000, guid: ff6e5dc00e067914f8f8c7652e55d2bb, type: 2}
+  - {fileID: 11400000, guid: bb5f39fdd66948e47b5ed7f2d844d1bf, type: 2}
+  - {fileID: 11400000, guid: a81703795d78aaf4c8f5c109b0851e02, type: 2}
+  - {fileID: 11400000, guid: 5550b71c90e3a144fbaca1700436a886, type: 2}
+  - {fileID: 11400000, guid: bd5efce704288ec4ba99ddf06fbe296e, type: 2}
+  - {fileID: 11400000, guid: 5cc3893a63c055242980bfd94e782da1, type: 2}

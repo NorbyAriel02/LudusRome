@@ -6,6 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character System/Character/New 2D Character")]
 public class Character2DObject : CharacterObject
 {
-    public Sprite sprite;
-    public Animator animator;
+    public Sprite avatarUI;
+    public GameObject Character;
 }

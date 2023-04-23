@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour
         //obtengo la vida maxima
         float health = gladiator.data.healthPoints;
         float maxHealth = gladiator.data.maxHealthPoints;
-        UIHelper.SetHealthBar(ref imgHealth, health, maxHealth);
+        UIHelper.SetfillAmount(ref imgHealth, health, maxHealth);
     }
     void Update()
     {

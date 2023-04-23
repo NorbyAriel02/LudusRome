@@ -9,6 +9,7 @@ public class GladiatorObject : Character2DObject
     public Stats attributes;
     public float baseHealthPoints = 50;
     public int level = 1;
+    public int value = 1;
     [NonSerialized] public float damagePoints;
     [NonSerialized] public float armorPoints;    
     [NonSerialized] public float maxHealthPoints;
@@ -28,7 +29,7 @@ public class GladiatorObject : Character2DObject
     }
     private void SetDamage()
     {
-        damagePoints = level * (attributes.force/50) + attributes.force;
+        damagePoints = level * (attributes.Strength/50) + attributes.Strength;
     }
 
     private void SetCooldown()
