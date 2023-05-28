@@ -1,35 +1,54 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum MoveIndex { Next = 1, After = -1 }
 public class MarketController : MonoBehaviour
 {
-    public delegate void ChangeGladitor(Gladiator gladiator);    
+    public delegate void ChangeGladitor(GladiatorV2 gladiator);    
     public static ChangeGladitor OnChange;
+    public EnumScene sceneBack;
     public GameObject prefabGladiator;
     public Transform pull;
     public int countPull;
     public List<Button> buttonList;
     public Transform viewerGladiator;
     public Transform ludus;
+    public GameObject panelSell;
+    public Image Avatar;
+    public TMP_Text txtName;
     private List<GameObject> listPull;
     private int index = 0;
-    public Gladiator currentGladiator = null;
+    private GladiatorV2 currentGladiator = null;
+    private GameObject currentItem = null;
+    private void OnEnable()
+    {
+        PanelSell.OnClose += Load;
+    }
+    private void OnDisable()
+    {     
+        PanelSell.OnClose -= Load;
+    }
     void Start()
     {
-        listPull = ObjectHelper.GetPull(prefabGladiator, countPull, transform);
-        SetOnGladiator();
+        listPull = ObjectHelper.GetPull(prefabGladiator, countPull, transform);        
         buttonList[0].onClick.AddListener(Back);
         buttonList[1].onClick.AddListener(Next);
         buttonList[2].onClick.AddListener(After);
         buttonList[3].onClick.AddListener(Buy);
+        Load();
+    }
+    private void Load()
+    {
+        ChangeGladiator(MoveIndex.Next);
     }
     private void Back()
     {
-        SceneHelper.Load("Mercado");
+        SceneHelper.Load(sceneBack.ToString());
     }
     private void Next()
     {
@@ -41,11 +60,16 @@ public class MarketController : MonoBehaviour
     }
     private void Buy()
     {
-        int IndexBuy = index;
-        ChangeGladiator(MoveIndex.Next);
-        GameObject go = listPull[IndexBuy];
-        go.transform.SetParent(ludus);
-        listPull.Remove(go);
+        if (currentItem == null)
+            return;
+
+        Avatar.sprite = currentGladiator.data.avatarUI;
+        txtName.text = "You bought " + Environment.NewLine + currentGladiator.data.name;
+        currentItem.transform.SetParent(ludus);
+        listPull.Remove(currentItem);
+        currentItem.SetActive(false);
+        currentItem = null;
+        panelSell.SetActive(true);
     }
 
     private void SetOffGladiator(int index)
@@ -62,13 +86,25 @@ public class MarketController : MonoBehaviour
     }
 
     private void ChangeGladiator(MoveIndex move)
-    {
+    {        
+        if (listPull.Count <= 0)
+        {
+            OnChange?.Invoke(null);
+            return;
+        }            
+
+        if (currentItem == null)
+            currentItem = listPull[0];
+
+        index = listPull.IndexOf(currentItem);
+        
         int indexOff = index;
         index = index + (int)move;
-        index = (index < 0) ? (index = countPull - 1) : (index >= countPull) ? 0 : index;
+        index = (index < 0) ? (index = listPull.Count - 1) : (index >= listPull.Count) ? 0 : index;
         SetOffGladiator(indexOff);
         SetOnGladiator(index);
-        currentGladiator = listPull[index].GetComponent<StartGladiator>().gladiator;
+        currentItem = listPull[index];
+        currentGladiator = currentItem.GetComponent<StartGladiator>().gladiator;
         OnChange?.Invoke(currentGladiator);
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6407765634595535773}
   - component: {fileID: 6407765634595535772}
   - component: {fileID: 6407765634595535775}
+  - component: {fileID: 7275777162201061263}
   m_Layer: 0
   m_Name: PrefabGladiator
   m_TagString: Untagged
@@ -50,8 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   db: {fileID: 11400000, guid: 3463375ec4f21dc4c9fae66e6c1a029b, type: 2}
-  gladiator:
-    data: {fileID: 0}
   view: {fileID: 6407765636368564179}
 --- !u!114 &6407765634595535773
 MonoBehaviour:
@@ -66,8 +65,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgHealth: {fileID: 6407765636232100685}
-  gladiator:
-    data: {fileID: 0}
 --- !u!114 &6407765634595535772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,8 +78,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgCooldownBar: {fileID: 6407765635817043762}
-  gladiator:
-    data: {fileID: 0}
 --- !u!114 &6407765634595535775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,8 +92,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCharisma: 30
   imgCharismaBar: {fileID: 6407765635586271074}
-  gladiator:
-    data: {fileID: 0}
+--- !u!114 &7275777162201061263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407765634595535768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99be564d780715341be1c81695211434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentObject: {fileID: 11400000, guid: 0319e4c4088891c4585248b86f44f883, type: 2}
 --- !u!1 &6407765635102391601
 GameObject:
   m_ObjectHideFlags: 0

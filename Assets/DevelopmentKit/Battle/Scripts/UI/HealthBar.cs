@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Image imgHealth;
-    public Gladiator gladiator = null;
+    public GladiatorV2 gladiator = null;
     private void OnEnable()
     {
         BattleController.OnAttack += UpdateHealthBar;
@@ -19,8 +19,8 @@ public class HealthBar : MonoBehaviour
     {
         //obtengo la vida actual
         //obtengo la vida maxima
-        float health = gladiator.data.healthPoints;
-        float maxHealth = gladiator.data.maxHealthPoints;
+        float health = gladiator.data.attributes.GetPropertyValue(Attributes.HealthPoints);
+        float maxHealth = gladiator.data.attributes.GetPropertyValue(Attributes.MaxHealthPoints);
         UIHelper.SetfillAmount(ref imgHealth, health, maxHealth);
     }
     void Update()

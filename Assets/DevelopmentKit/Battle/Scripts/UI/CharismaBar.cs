@@ -6,7 +6,7 @@ public class CharismaBar : MonoBehaviour
 {
     public float maxCharisma = 100;
     public Image imgCharismaBar;
-    public Gladiator gladiator = null;
+    public GladiatorV2 gladiator = null;
     private int countAttack = 0;
     private void OnEnable()
     {
@@ -18,7 +18,7 @@ public class CharismaBar : MonoBehaviour
     }    
     public void OnAttack()
     {
-        float charisma = gladiator.data.attributes.charisma;
+        float charisma = gladiator.data.attributes.GetPropertyValue(Attributes.Charisma);
         countAttack++;
         float fx = (charisma * countAttack)/ maxCharisma;
         UIHelper.SetfillAmount(ref imgCharismaBar, fx);

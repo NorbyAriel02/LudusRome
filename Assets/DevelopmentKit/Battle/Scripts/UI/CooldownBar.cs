@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CooldownBar : MonoBehaviour
 {
     public Image imgCooldownBar;
-    public Gladiator gladiator = null;    
+    public GladiatorV2 gladiator = null;    
     private float timer;
     private bool isCombat = false;
     private void OnEnable()
@@ -37,9 +37,9 @@ public class CooldownBar : MonoBehaviour
             timer -= Time.deltaTime;
             
             if (timer < 0)
-                timer = gladiator.data.cooldownAttack;
+                timer = gladiator.data.attributes.GetPropertyValue(Attributes.CooldownAttack);
 
-            UIHelper.SetfillAmount(ref imgCooldownBar, timer, gladiator.data.cooldownAttack);            
+            UIHelper.SetfillAmount(ref imgCooldownBar, timer, gladiator.data.attributes.GetPropertyValue(Attributes.CooldownAttack));            
             yield return null;            
         }
         Debug.Log("End corrutine");

@@ -17,19 +17,36 @@ public class PanelStatsController : MonoBehaviour
     private void OnEnable()
     {
         MarketController.OnChange += SetTextStat;
+        LudusController.OnChange += SetTextStat;
     }
     private void OnDisable()
     {
         MarketController.OnChange -= SetTextStat;
+        LudusController.OnChange -= SetTextStat;
     }
-    private void SetTextStat(Gladiator gladiator)
+    private void Clear()
     {
-        txtStrength.text = gladiator.data.attributes.Strength.ToString();
-        txtConstitution.text = gladiator.data.attributes.constitution.ToString();
-        txtCharisma.text = gladiator.data.attributes.charisma.ToString();
-        txtDexterity.text = gladiator.data.attributes.dexterity.ToString();
-        txtInteligence.text = gladiator.data.attributes.intelligence.ToString();
-        txtLevel.text = gladiator.data.level.ToString();
-        txtValue.text = gladiator.data.value.ToString();
+        txtStrength.text = "0";
+        txtConstitution.text = "0";
+        txtCharisma.text = "0";
+        txtDexterity.text = "0";
+        txtInteligence.text = "0";
+        txtLevel.text = "0";
+        txtValue.text = "0";
+    }
+    private void SetTextStat(GladiatorV2 gladiator)
+    {
+        if (gladiator == null)
+        {
+            Clear();
+            return;
+        }
+        txtStrength.text = gladiator.data.attributes.GetPropertyValue(Attributes.Strength).ToString();
+        txtConstitution.text = gladiator.data.attributes.GetPropertyValue(Attributes.Constitution).ToString();
+        txtCharisma.text = gladiator.data.attributes.GetPropertyValue(Attributes.Charisma).ToString();
+        txtDexterity.text = gladiator.data.attributes.GetPropertyValue(Attributes.Dexterity).ToString();
+        txtInteligence.text = gladiator.data.attributes.GetPropertyValue(Attributes.Intelligence).ToString();
+        txtLevel.text = gladiator.data.attributes.GetPropertyValue(Attributes.Level).ToString();
+        txtValue.text = gladiator.data.attributes.GetPropertyValue(Attributes.Value).ToString();
     }
 }

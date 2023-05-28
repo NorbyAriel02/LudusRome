@@ -11,10 +11,16 @@ public enum EnumScene : int
     Menu,
     [EnumMember(Value = "Opciones")]
     Opciones,
-    [EnumMember(Value = "level")]
-    Level,
+    [EnumMember(Value = "Ludus")]
+    Ludus,
     [EnumMember(Value = "Creditos")]
     Creditos,
+    [EnumMember(Value = "Mercado")]
+    Mercado,
+    [EnumMember(Value = "Arenas")]
+    Arenas,
+    [EnumMember(Value = "Arena")]
+    Arena,
     [EnumMember(Value = "Desa")]
     Desa
 }

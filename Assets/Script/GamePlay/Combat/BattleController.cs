@@ -15,8 +15,8 @@ public class BattleController : MonoBehaviour
     public float healthEndBattle = 5;
     public GameObject gladiatorGO1;
     public GameObject gladiatorGO2;
-    private Gladiator gladiator1;
-    private Gladiator gladiator2;
+    private GladiatorV2 gladiator1;
+    private GladiatorV2 gladiator2;
     private BattleManager battleManager;
     void Start()
     {
@@ -35,24 +35,24 @@ public class BattleController : MonoBehaviour
             StartCoroutine(BattleCorrutine(gladiator2.data, gladiator1.data));
         }
     }
-    private void PrintStat(Gladiator gladiator)
+    private void PrintStat(GladiatorV2 gladiator)
     {
         Debug.Log(gladiator.data.name);
-        Debug.Log(" healthPoints->" + gladiator.data.healthPoints);
-        Debug.Log(" cooldownAttack->" + gladiator.data.cooldownAttack);
-        Debug.Log(" damagePoints->" + gladiator.data.damagePoints);
-        Debug.Log(" armorPoints->" + gladiator.data.armorPoints);
-    }
-    IEnumerator BattleCorrutine(GladiatorObject attacker, GladiatorObject defender)
-    {   
-        while(defender.healthPoints >= healthEndBattle)
+        foreach (var s in gladiator.data.attributes.Properties)
         {
-            yield return new WaitForSeconds(attacker.cooldownAttack);
-            defender.healthPoints = (defender.healthPoints - battleManager.AttackTest(attacker, defender));            
+            Debug.Log(s.attribute + " " + s.value);
+        }
+    }
+    IEnumerator BattleCorrutine(GladiatorObjectV2 attacker, GladiatorObjectV2 defender)
+    {        
+        while (defender.attributes.GetPropertyValue(Attributes.HealthPoints) >= healthEndBattle)
+        {
+            yield return new WaitForSeconds(attacker.attributes.GetPropertyValue(Attributes.CooldownAttack));
+            defender.attributes.SetPropertyValue(Attributes.HealthPoints, (defender.attributes.GetPropertyValue(Attributes.HealthPoints) - battleManager.AttackTest(attacker, defender)));            
             OnAttack?.Invoke();
         } 
         StopAllCoroutines();
-        if(defender.healthPoints > 0)
+        if(defender.attributes.GetPropertyValue(Attributes.HealthPoints) > 0)
             MiteOrIogula?.Invoke();
         else
             EndBattle?.Invoke();

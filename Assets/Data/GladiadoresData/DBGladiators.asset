@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: DBGladiators
   m_EditorClassIdentifier: 
   GladiatorObjects:
-  - {fileID: 11400000, guid: 95e5404af8c424c4c841ead07b17733f, type: 2}
-  - {fileID: 11400000, guid: f040517da02d39a41867ab5adb1eb49c, type: 2}
-  - {fileID: 11400000, guid: 5f3bb69e12db7b845abfb51a0c0c748c, type: 2}
-  - {fileID: 11400000, guid: 90f284ea82d636746bc5f9d50f442448, type: 2}
-  - {fileID: 11400000, guid: ff6e5dc00e067914f8f8c7652e55d2bb, type: 2}
-  - {fileID: 11400000, guid: bb5f39fdd66948e47b5ed7f2d844d1bf, type: 2}
-  - {fileID: 11400000, guid: a81703795d78aaf4c8f5c109b0851e02, type: 2}
-  - {fileID: 11400000, guid: 5550b71c90e3a144fbaca1700436a886, type: 2}
-  - {fileID: 11400000, guid: bd5efce704288ec4ba99ddf06fbe296e, type: 2}
-  - {fileID: 11400000, guid: 5cc3893a63c055242980bfd94e782da1, type: 2}
+  - {fileID: 11400000, guid: 9abce04e670f2994689acf719f9c3040, type: 2}
+  - {fileID: 11400000, guid: 130d88c3a7c327c4180b025a20fe3290, type: 2}
+  - {fileID: 11400000, guid: 161d050410bc0ea4c885e11b9d96d6e5, type: 2}
+  - {fileID: 11400000, guid: 065bb8ece94ecf94894eba2470e085e0, type: 2}
+  - {fileID: 11400000, guid: cc42750cb049e4b47859b20cf5674fa6, type: 2}
+  - {fileID: 11400000, guid: c5b799abe575f4c44b65c95101bfff67, type: 2}
+  - {fileID: 11400000, guid: fadef1650cf46d1428e6b0d2864324f2, type: 2}
+  - {fileID: 11400000, guid: 131b5383d641ecb44b36bd18cd6232ba, type: 2}
+  - {fileID: 11400000, guid: 09415778601d8a941a4fff24888e09f2, type: 2}
+  - {fileID: 11400000, guid: 88e7cadca1425754caf86db29286675b, type: 2}

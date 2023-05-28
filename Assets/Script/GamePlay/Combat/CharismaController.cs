@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharismaController : MonoBehaviour
 {
     private BattleController battleController;
-    private Gladiator gladiator;
+    private GladiatorV2 gladiator;
     void Start()
     {        
         BattleController.OnAttack += UpdateCharisma;
