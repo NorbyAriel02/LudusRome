@@ -1,0 +1,22 @@
+﻿public enum Attributes
+{
+    Agility,
+    Intellect,
+    Stamina,
+    Strength,
+    Dexterity,
+    Constitution,
+    Intelligence,
+    Wisdom,
+    Charisma,
+    DamagePoints,
+    CooldownAttack,
+    ArmorPoints,
+    MaxHealthPoints,
+    HealthPoints,
+    BaseHealthPoints,
+    EquippedWeaponWeight,
+    WeapomDamage,
+    Level,
+    Value
+}
