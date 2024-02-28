@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f2a174ebdb2334f858b6938eb68a28, type: 3}
+  m_Name: Seguir
+  m_EditorClassIdentifier: 
+  name: Seguir
+  description: 
+  index: 1
+  stateToTransition:
+  - {fileID: 11400000, guid: fbbdbc528f3916b48b66710f04527304, type: 2}
+  - {fileID: 11400000, guid: 33ac094325e2c9e4990b5bf9e5819671, type: 2}
+  animationTrigger: Walk
